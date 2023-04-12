@@ -3,8 +3,9 @@ import connectDB from "@/utils/connectDB";
 import nc from "next-connect";
 await connectDB();
 const handler = nc()
+  .use(require("body-parser").json())
   .get(async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.query;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({ error: "No such workout" });
@@ -19,7 +20,7 @@ const handler = nc()
     res.status(200).json(workout);
   })
   .put(async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.query;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ error: "No such workout" });
@@ -53,3 +54,4 @@ const handler = nc()
 
     res.status(200).json(workout);
   });
+export default handler;
