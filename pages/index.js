@@ -4,9 +4,7 @@ import domain from "@/utils/config";
 import axios from "axios";
 
 export default function Home({ workoutData }) {
-  const workouts = workoutData.map((workout) => {
-    return <p>{workout}</p>;
-  });
+  const workouts = workoutData
 
   return (
     <>
