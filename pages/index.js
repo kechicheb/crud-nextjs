@@ -1,4 +1,4 @@
-import workout from "@/model/Workout";
+
 import styles from "@/styles/Home.module.css";
 import domain from "@/utils/config";
 import axios from "axios";
