@@ -1,4 +1,4 @@
-import Workout from "@/models/workout";
+import Workout from "@/models/Workout";
 import connectDB from "@/utils/connectDB";
 import nc from "next-connect";
 await connectDB();

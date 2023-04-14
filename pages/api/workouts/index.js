@@ -2,9 +2,8 @@ import Workout from "@/models/Workout";
 import connectDB from "@/utils/connectDB";
 import nc from "next-connect";
 
-await connectDB();
+connectDB();
 const handler = nc()
-  .use(require("body-parser").json())
   .post(async (req, res) => {
     const { title, load, reps } = req.body;
 
@@ -38,6 +37,5 @@ const handler = nc()
     const workouts = await Workout.find({}).sort({ createdAt: -1 });
 
     res.status(200).json(workouts);
-    // res.status(200).json({ data: "ahmed" })
   });
 export default handler;
