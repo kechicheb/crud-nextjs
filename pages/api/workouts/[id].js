@@ -1,9 +1,8 @@
 import Workout from "@/models/Workout";
 import connectDB from "@/utils/connectDB";
 import nc from "next-connect";
-await connectDB();
+connectDB();
 const handler = nc()
-  .use(require("body-parser").json())
   .get(async (req, res) => {
     const { id } = req.query;
 
