@@ -1,4 +1,4 @@
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 import domain from "@/utils/config";
 import { useWorkoutsContext } from "@/lib/hooks/useWorkouts";
 import { useEffect } from "react";
