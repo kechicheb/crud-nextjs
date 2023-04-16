@@ -41,12 +41,12 @@ const handler = nc()
   .delete(async (req, res) => {
     const { id } = req.query;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ error: "No such workout" });
-    }
+    // if (!mongoose.Types.ObjectId.isValid(id)) {
+    //   return res.status(400).json({ error: "No such workout" });
+    // }
 
     const workout = await Workout.findOneAndDelete({ _id: id });
- 
+
     if (!workout) {
       return res.status(400).json({ error: "No such workout" });
     }
